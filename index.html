@@ -1,0 +1,162 @@
+<!DOCTYPE html> 
+<html>
+<head>
+<meta http-equiv="Content-type" content="text/html;charset=utf-8">
+<meta name="viewport" id="viewport" content="width=device-width, height=device-height, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes;" />
+<title>Equipo 4 APP</title>
+<link href="css/reset.css" rel="stylesheet" />
+<link href="css/bootstrap.css" rel="stylesheet" />
+<link rel="stylesheet" href="jquery.mobile.structure-1.3.2.min.css" />
+
+<script>
+function alerta()
+{
+alert("alertacomun");
+}
+</script>
+
+<style type="text/css">
+  html { height: 100% }
+  body { height: 100%; margin: 0; padding: 0 }
+  #map_canvas { height: 100%; }
+  .centrar{ text-align:center;}
+</style>
+<script type="text/javascript"
+    src="http://maps.googleapis.com/maps/api/js?sensor=true">
+</script>
+<script type="text/javascript" charset="utf-8" src="cordova.js"></script>
+<script type="text/javascript">
+
+var map
+var marcador
+
+  function initialize() {
+	var latlng = new google.maps.LatLng(-34.397, 150.644);
+    var lat2lng = new google.maps.LatLng(19.692, -101.195);
+    var myOptions = {
+      zoom: 8,
+      center: latlng,
+      mapTypeId: google.maps.MapTypeId.ROADMAP,
+      zoomControl: true
+    };
+    map = new google.maps.Map(document.getElementById("map_canvas"),
+        myOptions);
+		
+		
+    marcador = new google.maps.Marker( {
+		position: latlng,
+		map:map	
+	})
+	marcador2 = new google.maps.Marker( {
+		position: lat2lng,
+		map:map	
+	})
+  }
+  
+  function mostrarUbicacion(){
+		navigator.geolocation.getCurrentPosition( lecturaGPS , errorGPS , {enableHighAccuracy:true} )  
+  }
+  
+  function lecturaGPS(ubicacion){
+	  
+	  var miubicacion = new google.maps.LatLng(ubicacion.coords.latitude, ubicacion.coords.longitude);
+	  
+	  map.setCenter(miubicacion)
+	  marcador.setPosition(miubicacion)
+  }
+  
+  function errorGPS(){
+	  alert(" no puedo encontrarte :(")
+  }
+  
+
+</script>
+
+
+<script src="jquery-1.9.1.js"></script>
+<script src="jquery.mobile-1.3.2.js"></script>
+<script src="js/bootstrap.js"></script>
+<script type="text/javascript" charset="utf-8" src="phonegap.js"></script>
+</head> 
+
+
+<body> 
+<div data-role="page" id="page" style="background-color: #13A7C7;">
+	<div class="navbar navbar-static-top navbar-inverse" style="padding-bottom:15px;">
+    	<div class="navbar-inner" style="padding:0;">
+        <ul class="nav row-fluid">
+          <li class="span4 text-center active" style="margin:0;"><a href="#page"><i class="icon-home"></i><br> INICIO</br></a></li>
+          <li class="span4 text-center" style="margin:0;"><a href="#page2"><i class="icon-list-alt"></i><br> CONSULTA</br></a></li>
+          <li class="span4 text-center" style="margin:0;"><a href="#page3"><i class="icon-map-marker"></i><br> UBICACÍON</br></a></li>
+        </ul>
+        </div>
+    </div>
+	<div class="container-fluid" style="padding-right:12px; padding-left:12px;">
+        <div class="hero-unit" style="text-align:
+          center;">
+<h2>¡BIENVENIDO!</h2>
+          <p style="line-height: 23px; text-align:justify; font-size:medium;">Esta es nuestra aplicación, te recordamos que con ella puedes consultar tus resultados sin necesidad de asistir a nuestras instalaciónes.
+          Támbien puedes consultar nuestra clinica mas cercana a traves de nuestro sistema de busqueda por <span class="label label-info">GPS</span></p>
+          <p><br>
+              <h3 style="line-height: 0; text-align:justify;"><small style="line-height: 1em; text-align:justify;">Recuerda visitar nuestro sito en linea para mas información</small></h3>
+            <a class="btn btn-block btn-primary btn-large" href="http://dota2.com">
+              Ir a la página 
+            <i class="icon-globe icon-white"></i></a>
+          </p></br>
+        </div>
+	</div>
+	<div class="ui-footer ui-footer-fixed text-center" style="background: black;">
+		<h5>Equipo 4. UTM-TI9B</h5>
+	</div>
+</div>
+
+<div data-role="page" id="page2" style="background-color: #13A7C7;">
+	<div class="navbar navbar-static-top navbar-inverse" style="padding-bottom:20px;">
+    	<div class="navbar-inner" style="padding:0;">
+        <ul class="nav row-fluid">
+          <li class="span4 text-center" style="margin:0;"><a href="#page"><i class="icon-home"></i><br> INICIO</br></a></li>
+          <li class="span4 text-center active" style="margin:0;"><a href="#page2"><i class="icon-list-alt"></i><br> CONSULTA</br></a></li>
+          <li class="span4 text-center" style="margin:0;"><a href="#page3"><i class="icon-map-marker"></i><br> UBICACÍON</br></a></li>
+        </ul>
+        </div>
+    </div>
+	<div class="container-fluid" style="margin-top: 2%;">	
+    	<div class="hero-unit">
+            	<p>
+                	Escribe los datos:<br>
+                    <input class="input-small" type="text" placeholder="Nombre">
+                    </br>
+                     <input class="input-small" type="text" placeholder="Id usuario"></br>
+                    <input type="button" class="btn btn-block btn-success" value="Enviar consulta">
+                </p>
+        </div>
+	</div>
+	<div class="ui-footer ui-footer-fixed text-center" style="background: black;">
+		<h5>Equipo 4. UTM-TI9B</h5>
+	</div>
+</div>
+
+<div data-role="page" id="page3" style="background-color: #13A7C7;">
+	<div class="navbar navbar-static-top navbar-inverse" style="padding-bottom:20px;">
+    	<div class="navbar-inner" style="padding:0;">
+        <ul class="nav row-fluid">
+          <li class="span4 text-center" style="margin:0;"><a href="#page"><i class="icon-home"></i><br> INICIO</br></a></li>
+          <li class="span4 text-center" style="margin:0;"><a href="#page2"><i class="icon-list-alt"></i><br> CONSULTA</br></a></li>
+          <li class="span4 text-center active" style="margin:0;"><a href="#page3"><i class="icon-map-marker"></i><br> UBICACÍON</br></a></li>
+        </ul>
+        </div>
+    </div>
+        <button onClick="mostrarUbicacion()"> mostrar mi ubicacion </button>	
+         <button onClick="alerta()"> alerta </button>	
+         <button onClick="initialize()"> mapa </button>	
+	<div class="container-fluid" style="margin-top: 1%;">
+    	<div class="row-fluid">	
+        <div id="map_canvas" class="span12" style="height:500px;"></div>
+        </div>
+	</div>
+	<div class="ui-footer ui-footer-fixed text-center" style="background: black;">
+		<h5>Equipo 4. UTM-TI9B</h5>
+	</div>
+</div>
+</body>
+</html>
