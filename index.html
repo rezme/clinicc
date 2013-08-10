@@ -1,88 +1,48 @@
 <!DOCTYPE html> 
 <html>
 <head>
+
 <meta http-equiv="Content-type" content="text/html;charset=utf-8">
 <meta name="viewport" id="viewport" content="width=device-width, height=device-height, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes;" />
+
 <title>Equipo 4 APP</title>
+<link href="jquery.mobile.structure-1.3.2.css" rel="stylesheet" />
 <link href="css/reset.css" rel="stylesheet" />
 <link href="css/bootstrap.css" rel="stylesheet" />
-<link rel="stylesheet" href="jquery.mobile.structure-1.3.2.min.css" />
 
-<script>
-function alerta()
-{
-alert("alertacomun");
-}
-</script>
-
-<style type="text/css">
-  html { height: 100% }
-  body { height: 100%; margin: 0; padding: 0 }
-  #map_canvas { height: 100%; }
-  .centrar{ text-align:center;}
-</style>
-<script type="text/javascript"
-    src="http://maps.googleapis.com/maps/api/js?sensor=true">
-</script>
-<script type="text/javascript" charset="utf-8" src="cordova.js"></script>
-<script type="text/javascript">
-
-var map
-var marcador
-
-  function initialize() {
-	var latlng = new google.maps.LatLng(-34.397, 150.644);
-    var lat2lng = new google.maps.LatLng(19.692, -101.195);
-    var myOptions = {
-      zoom: 8,
-      center: latlng,
-      mapTypeId: google.maps.MapTypeId.ROADMAP,
-      zoomControl: true
-    };
-    map = new google.maps.Map(document.getElementById("map_canvas"),
-        myOptions);
-		
-		
-    marcador = new google.maps.Marker( {
-		position: latlng,
-		map:map	
-	})
-	marcador2 = new google.maps.Marker( {
-		position: lat2lng,
-		map:map	
-	})
-  }
-  
-  function mostrarUbicacion(){
-		navigator.geolocation.getCurrentPosition( lecturaGPS , errorGPS , {enableHighAccuracy:true} )  
-  }
-  
-  function lecturaGPS(ubicacion){
-	  
-	  var miubicacion = new google.maps.LatLng(ubicacion.coords.latitude, ubicacion.coords.longitude);
-	  
-	  map.setCenter(miubicacion)
-	  marcador.setPosition(miubicacion)
-  }
-  
-  function errorGPS(){
-	  alert(" no puedo encontrarte :(")
-  }
-  
-
-</script>
+    <style type="text/css">
+	  .centrar{ text-align:center;}
+	  html {height:100%}
+	  body {height:100%;margin:0;padding:0}
+	  #map_canvas{height:100%}
+	</style>
 
 
+<script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?sensor=true"></script>
+<script type="text/javascript" src="maps.js"></script>
 <script src="jquery-1.9.1.js"></script>
 <script src="jquery.mobile-1.3.2.js"></script>
 <script src="js/bootstrap.js"></script>
 <script type="text/javascript" charset="utf-8" src="phonegap.js"></script>
+<script type="text/javascript">
+             $(document).ready(function() {
+                $("#peticion").click(function(event) {
+                    $("#capa").load('http://intermediafest.com/celular/dota2.php', function(response, status, xhr) {
+                          if (status == "error") {
+                            var msg = "<strong>¡Error!</strong> Por favor verifica tu conexión a internet";
+                            $("#capaerror").html('<div class="alert alert-error">' + msg + '</div>');
+                          }
+                        });
+                });
+            });  
+        </script>
+
 </head> 
 
-
 <body> 
-<div data-role="page" id="page" style="background-color: #13A7C7;">
-	<div class="navbar navbar-static-top navbar-inverse" style="padding-bottom:15px;">
+
+<div data-role="page" id="page" style="background-color: #13A7C7; padding-top: 75px; padding-bottom: 25px; height: 100%;">
+	<div class="navbar navbar-fixed-top navbar-inverse">
     	<div class="navbar-inner" style="padding:0;">
         <ul class="nav row-fluid">
           <li class="span4 text-center active" style="margin:0;"><a href="#page"><i class="icon-home"></i><br> INICIO</br></a></li>
@@ -91,7 +51,8 @@ var marcador
         </ul>
         </div>
     </div>
-	<div class="container-fluid" style="padding-right:12px; padding-left:12px;">
+    
+  <div class="container-fluid" style="padding-right:12px; padding-left:12px;">
         <div class="hero-unit" style="text-align:
           center;">
 <h2>¡BIENVENIDO!</h2>
@@ -110,8 +71,9 @@ var marcador
 	</div>
 </div>
 
-<div data-role="page" id="page2" style="background-color: #13A7C7;">
-	<div class="navbar navbar-static-top navbar-inverse" style="padding-bottom:20px;">
+<!-- PAGINA 2-->
+<div data-role="page" id="page2" style="background-color: #13A7C7; padding-top: 75px; padding-bottom: 25px;">
+	<div class="navbar navbar-fixed-top navbar-inverse">
     	<div class="navbar-inner" style="padding:0;">
         <ul class="nav row-fluid">
           <li class="span4 text-center" style="margin:0;"><a href="#page"><i class="icon-home"></i><br> INICIO</br></a></li>
@@ -120,15 +82,33 @@ var marcador
         </ul>
         </div>
     </div>
-	<div class="container-fluid" style="margin-top: 2%;">	
+	<div class="container-fluid" style="padding-right:12px; padding-left:12px;">	
     	<div class="hero-unit">
-            	<p>
-                	Escribe los datos:<br>
-                    <input class="input-small" type="text" placeholder="Nombre">
-                    </br>
-                     <input class="input-small" type="text" placeholder="Id usuario"></br>
-                    <input type="button" class="btn btn-block btn-success" value="Enviar consulta">
-                </p>
+            	<div class="centrar">
+                	<p>Por favor introduce los siguientes datos:</p>
+                    <div class="control-group" style="margin-bottom: 0;">
+                      <div class="controls">
+                        <div class="input-prepend">
+                          <span class="add-on"><i class="icon-user"></i></span>
+                    <input class="input-medium" data-role="none" type="text" placeholder="Nombre completo">
+                    		</div>
+                    	</div>
+                    </div>
+                    <p style="margin-bottom: 0px;"></p>
+                    <div class="control-group">
+                      <div class="controls">
+                        <div class="input-prepend">
+                          <span class="add-on"><i class="icon-info-sign"></i></span>
+                    <input class="input-medium" data-role="none" type="text" placeholder="ID">
+                    		</div>
+                    	</div>
+                    </div>
+                    <a class="btn btn-block btn-success" href="#" id="peticion" style="margin-bottom:10px;">
+              Enviar consulta
+					</a>
+                </div>
+               	<div id="capa"></div>
+                <div id="capaerror"></div>
         </div>
 	</div>
 	<div class="ui-footer ui-footer-fixed text-center" style="background: black;">
@@ -136,8 +116,9 @@ var marcador
 	</div>
 </div>
 
-<div data-role="page" id="page3" style="background-color: #13A7C7;">
-	<div class="navbar navbar-static-top navbar-inverse" style="padding-bottom:20px;">
+<!-- PAGINA 3-->
+<div data-role="page" id="page3" style="background-color: #13A7C7; padding-top: 75px; padding-bottom: 25px; height: 100%;">
+	<div class="navbar navbar-fixed-top navbar-inverse">
     	<div class="navbar-inner" style="padding:0;">
         <ul class="nav row-fluid">
           <li class="span4 text-center" style="margin:0;"><a href="#page"><i class="icon-home"></i><br> INICIO</br></a></li>
@@ -146,17 +127,11 @@ var marcador
         </ul>
         </div>
     </div>
-        <button onClick="mostrarUbicacion()"> mostrar mi ubicacion </button>	
-         <button onClick="alerta()"> alerta </button>	
-         <button onClick="initialize()"> mapa </button>	
-	<div class="container-fluid" style="margin-top: 1%;">
-    	<div class="row-fluid">	
-        <div id="map_canvas" class="span12" style="height:500px;"></div>
-        </div>
-	</div>
-	<div class="ui-footer ui-footer-fixed text-center" style="background: black;">
-		<h5>Equipo 4. UTM-TI9B</h5>
-	</div>
+        <button class="btn btn-block btn-primary" onClick="initialize(); mostrarUbicacion();"> Abrir mapa </button>
+		<div id="map_canvas" style="margin-top:5px; height: 500px"></div>
+    <footer class="ui-footer-fixed" style="background-color:black; margin-top: 40px;">
+		<h5 style="text-align:center; color:#333;">Equipo 4. UTM-TI9B</h5>
+	</footer>
 </div>
 </body>
 </html>
