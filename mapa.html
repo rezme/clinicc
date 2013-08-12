@@ -7,7 +7,7 @@
 <style>
 	html{height:100%;}
 	body{height:100%; margin:0; padding:0;}
-	#map_canvas{height:100%;}
+	#map_canvas, #map_mx{height:100%;}
 </style>
 
 <script type="text/javascript" src="maps.js"></script>
@@ -16,9 +16,13 @@
 </head>
 
 <body>
-<button onClick="initialize()"> mostrar mi ubicacion </button>
+<button onClick="initialize()"> mapa </button>
 <button onClick="mostrarUbicacion()"> mostrar mi ubicacion </button>
+<button onClick="mostrarUbicacionMorelia()"> morelia </button>
+<button onClick="mostrarUbicacionMexico()"> mexico </button>
+<button onClick="mostrarUbicacionGuadalajara()"> guadalajara </button>
 <div id="map_canvas"></div>
+<div id="map_mx"></div>
 </div>
 </div>
 </body>

@@ -56,14 +56,13 @@
         <div class="hero-unit" style="text-align:
           center;">
 <h2>¡BIENVENIDO!</h2>
-          <p style="line-height: 23px; text-align:justify; font-size:medium;">Esta es nuestra aplicación, te recordamos que con ella puedes consultar tus resultados sin necesidad de asistir a nuestras instalaciónes.
+          <p style="line-height: 23px; text-align:justify; font-size:medium; display:block; margin-bottom: 30px;">Esta es nuestra aplicación, te recordamos que con ella puedes consultar tus resultados sin necesidad de asistir a nuestras instalaciónes.
           Támbien puedes consultar nuestra clinica mas cercana a traves de nuestro sistema de busqueda por <span class="label label-info">GPS</span></p>
-          <p><br>
-              <h3 style="line-height: 0; text-align:justify;"><small style="line-height: 1em; text-align:justify;">Recuerda visitar nuestro sito en linea para mas información</small></h3>
-            <a class="btn btn-block btn-primary btn-large" href="http://dota2.com">
+
+              <h3 style="line-height: 0; text-align:justify;"><small style="line-height: 1em; text-align:justify; border-top: 1px solid #eeeeee; padding-top: 15px; display:block;">Recuerda visitar nuestro sito en linea para mas información</small></h3>
+            <a class="btn btn-block btn-primary btn-large" href="http://dota2.com" style="margin-bottom: 15px;">
               Ir a la página 
             <i class="icon-globe icon-white"></i></a>
-          </p></br>
         </div>
 	</div>
 	<div class="ui-footer ui-footer-fixed text-center" style="background: black;">
@@ -85,7 +84,7 @@
 	<div class="container-fluid" style="padding-right:12px; padding-left:12px;">	
     	<div class="hero-unit">
             	<div class="centrar">
-                	<p>Por favor introduce los siguientes datos:</p>
+                	<p style="font-size:medium;">Por favor introduce los siguientes <strong>datos:</strong></p>
                     <div class="control-group" style="margin-bottom: 0;">
                       <div class="controls">
                         <div class="input-prepend">
@@ -127,7 +126,21 @@
         </ul>
         </div>
     </div>
-    <button class="btn btn-block btn-primary" onClick="initialize(); mostrarUbicacion();"> Abrir mapa </button>
+    <div class="centrar">
+        <div class="btn-group" style="text-align: left;">
+          <a class="btn dropdown-toggle" data-toggle="dropdown" href="#">
+            Buscar en
+            <span class="caret"></span>
+          </a>
+          <ul class="dropdown-menu">
+            <li><a href="#" onClick="initialize(); mostrarUbicacionMorelia();">Morelia <i class="icon-chevron-right" style="float:right; vertical-align: text-top;"></i></a></li>
+            <li><a href="#" onClick="initialize(); mostrarUbicacionMexico();">Cd. de México <i class="icon-chevron-right" style="float:right;"></i></a></li>
+            <li><a href="#" onClick="initialize(); mostrarUbicacionGuadalajara();">Guadalajara <i class="icon-chevron-right" style="float:right;"></i></a></li>
+            <li class="divider"></li>
+            <li><a href="#" onClick="initialize(); mostrarUbicacion();">Mi ubicacion <i class="icon-chevron-right" style="float:right;"></i></a></li>
+          </ul>
+        </div>
+    </div>
     <div id="map_canvas" style="margin-top:5px; height: 88%; width: 100%"></div>	
     <footer class="ui-footer-fixed" style="background-color:black; margin-top: 40px;">
 		<h5 style="text-align:center; color:#333;">Equipo 4. UTM-TI9B</h5>
