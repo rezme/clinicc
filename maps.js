@@ -97,7 +97,7 @@ var map
 	  
 	  var miubicacion = new google.maps.LatLng(ubicacion.coords.latitude, ubicacion.coords.longitude);  
 	  map.setCenter(miubicacion)
-	  map.setZoom(13)
+	  map.setZoom(12)
 	  marcador.setPosition(miubicacion)
   }
   
@@ -106,7 +106,7 @@ var map
 	  
 	  var latlngmor = new google.maps.LatLng(19.703, -101.195);
 	  map.setCenter(latlngmor)
-	  map.setZoom(13)	  
+	  map.setZoom(11)	  
   }
   
   //UBICACION MEXICO
@@ -114,7 +114,7 @@ var map
 	  
 	  var latlngmx = new google.maps.LatLng(19.432, -99.135);
 	  map.setCenter(latlngmx)
-	  map.setZoom(11)	  
+	  map.setZoom(9)	  
   }
   
   //UBICACION GUADALAJARA
@@ -122,7 +122,7 @@ var map
 	  
 	  var latlngguad = new google.maps.LatLng(20.63921,-103.336083);
 	  map.setCenter(latlngguad)
-	  map.setZoom(12)	  
+	  map.setZoom(10)	  
   }
   
   //error
