@@ -122,7 +122,7 @@ var map
 	  
 	  var latlngguad = new google.maps.LatLng(20.63921,-103.336083);
 	  map.setCenter(latlngguad)
-	  map.setZoom(11)	  
+	  map.setZoom(10)	  
   }
   
   //error
