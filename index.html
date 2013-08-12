@@ -35,10 +35,6 @@
 	  body {height:100%;margin:0;padding:0;}
 	  #map_canvas{height:100%; max-width: none;}
 	  div[id="page3"]{height: 10%; max-width:none;}
-	  .google-maps img{
-	  max-width:none;
-	  max-height:none;
-	  }
 	</style>
 
 </head> 
@@ -120,7 +116,7 @@
 </div>
 
 <!-- PAGINA 3-->
-<div data-role="page" id="page3" style="background-color: #13A7C7; padding-top: 65px; max-width:none;">
+<div data-role="page" class="google-maps" id="page3" style="background-color: #13A7C7; padding-top: 65px;">
 	<div class="navbar navbar-fixed-top navbar-inverse">
     	<div class="navbar-inner" style="padding:0;">
         <ul class="nav row-fluid">
@@ -145,7 +141,7 @@
           </ul>
         </div>
     </div>
-    <div id="map_canvas" class="google-maps" style="margin-top:4px; height: 94%;"></div>	
+    <div id="map_canvas" class="google-maps" style="margin-top:4px;"></div>	
 </div>
 </body>
 </html>
