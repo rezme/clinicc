@@ -114,7 +114,7 @@ var map
 	  
 	  var latlngmx = new google.maps.LatLng(19.432, -99.135);
 	  map.setCenter(latlngmx)
-	  map.setZoom(10)	  
+	  map.setZoom(9)	  
   }
   
   //UBICACION GUADALAJARA
