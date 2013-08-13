@@ -79,12 +79,69 @@ var map
 		position: g3,
 		map:map	
 	})
-	
+	// informacion
+	var infowindow2 = new google.maps.InfoWindow({
+			content:"<p style='margin-bottom: 0; margin-top: 0'>Ave. Galaxia #99</p><p style='margin-bottom: 0; margin-top: 0'> Parque Industrial Mexicali</p><style='margin-bottom: 0; margin-top: 0'> Mexicali, BC. C.P. 21210</p><p style='margin-bottom: 0; margin-top: 0'> Tel. (52) 686 564 24 00</p>"	  
+	});
+	var infowindow3 = new google.maps.InfoWindow({
+			content:"<p style='margin-bottom: 0; margin-top: 0'>Ave. Galaxia #99</p><p style='margin-bottom: 0; margin-top: 0'> Parque Industrial Mexicali</p><style='margin-bottom: 0; margin-top: 0'> Mexicali, BC. C.P. 21210</p><p style='margin-bottom: 0; margin-top: 0'> Tel. (52) 686 564 24 00</p>"	  
+	});
+	var infowindow4 = new google.maps.InfoWindow({
+			content:"<p style='margin-bottom: 0; margin-top: 0'>Ave. Galaxia #99</p><p style='margin-bottom: 0; margin-top: 0'> Parque Industrial Mexicali</p><style='margin-bottom: 0; margin-top: 0'> Mexicali, BC. C.P. 21210</p><p style='margin-bottom: 0; margin-top: 0'> Tel. (52) 686 564 24 00</p>"	  
+	});
+	var infowindow5 = new google.maps.InfoWindow({
+			content:"<p style='margin-bottom: 0; margin-top: 0'>Ave. Galaxia #99</p><p style='margin-bottom: 0; margin-top: 0'> Parque Industrial Mexicali</p><style='margin-bottom: 0; margin-top: 0'> Mexicali, BC. C.P. 21210</p><p style='margin-bottom: 0; margin-top: 0'> Tel. (52) 686 564 24 00</p>"	  
+	});
+	var infowindow6 = new google.maps.InfoWindow({
+			content:"<p style='margin-bottom: 0; margin-top: 0'>Ave. Galaxia #99</p><p style='margin-bottom: 0; margin-top: 0'> Parque Industrial Mexicali</p><style='margin-bottom: 0; margin-top: 0'> Mexicali, BC. C.P. 21210</p><p style='margin-bottom: 0; margin-top: 0'> Tel. (52) 686 564 24 00</p>"	  
+	});
+	var infowindow7 = new google.maps.InfoWindow({
+			content:"<p style='margin-bottom: 0; margin-top: 0'>Ave. Galaxia #99</p><p style='margin-bottom: 0; margin-top: 0'> Parque Industrial Mexicali</p><style='margin-bottom: 0; margin-top: 0'> Mexicali, BC. C.P. 21210</p><p style='margin-bottom: 0; margin-top: 0'> Tel. (52) 686 564 24 00</p>"	  
+	});
+	var infowindow8 = new google.maps.InfoWindow({
+			content:"<p style='margin-bottom: 0; margin-top: 0'>Ave. Galaxia #99</p><p style='margin-bottom: 0; margin-top: 0'> Parque Industrial Mexicali</p><style='margin-bottom: 0; margin-top: 0'> Mexicali, BC. C.P. 21210</p><p style='margin-bottom: 0; margin-top: 0'> Tel. (52) 686 564 24 00</p>"	  
+	});
+	var infowindow9 = new google.maps.InfoWindow({
+			content:"<p style='margin-bottom: 0; margin-top: 0'>Ave. Galaxia #99</p><p style='margin-bottom: 0; margin-top: 0'> Parque Industrial Mexicali</p><style='margin-bottom: 0; margin-top: 0'> Mexicali, BC. C.P. 21210</p><p style='margin-bottom: 0; margin-top: 0'> Tel. (52) 686 564 24 00</p>"	  
+	});
+	var infowindow10 = new google.maps.InfoWindow({
+			content:"<p style='margin-bottom: 0; margin-top: 0'>Ave. Galaxia #99</p><p style='margin-bottom: 0; margin-top: 0'> Parque Industrial Mexicali</p><style='margin-bottom: 0; margin-top: 0'> Mexicali, BC. C.P. 21210</p><p style='margin-bottom: 0; margin-top: 0'> Tel. (52) 686 564 24 00</p>"	  
+	});
 	var infowindow = new google.maps.InfoWindow({
 			content:"Te encuentras aqui"	  
 	});
+	//imprimiendo info
 	google.maps.event.addListener(marcador, 'click', function() {
 		infowindow.open(map,marcador);
+	});
+	google.maps.event.addListener(marcador2, 'click', function() {
+		infowindow2.open(map,marcador2);
+	});
+	google.maps.event.addListener(marcador3, 'click', function() {
+		infowindow3.open(map,marcador3);
+	});
+	//mexico
+	google.maps.event.addListener(marcadorm1, 'click', function() {
+		infowindow4.open(map,marcadorm1);
+	});
+	google.maps.event.addListener(marcadorm2, 'click', function() {
+		infowindow5.open(map,marcadorm2);
+	});
+	google.maps.event.addListener(marcadorm3, 'click', function() {
+		infowindow6.open(map,marcadorm3);
+	});
+	google.maps.event.addListener(marcadorm4, 'click', function() {
+		infowindow7.open(map,marcadorm4);
+	});
+	//guadalajara
+	google.maps.event.addListener(marcadorg1, 'click', function() {
+		infowindow8.open(map,marcadorg1);
+	});
+	google.maps.event.addListener(marcadorg2, 'click', function() {
+		infowindow9.open(map,marcadorg2);
+	});
+	google.maps.event.addListener(marcadorg3, 'click', function() {
+		infowindow10.open(map,marcadorg3);
 	});
   }
     

@@ -7,7 +7,31 @@
  *
  * Designed and built with all the love in the world by @mdo and @fat.
  */
-
+.btn-rojo {
+	color: #FFFFFF;
+	text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+	background-color: #ED1313;
+	*background-color: #ED1313;
+	background-image: -moz-linear-gradient(top, #ED1313, #ED1313);
+	background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#ED1313), to(#ED1313));
+	background-image: -webkit-linear-gradient(top, #ED1313, #ED1313);
+	background-image: -o-linear-gradient(top, #ED1313, #ED1313);
+	background-image: linear-gradient(to bottom, #ED1313, #ED1313);
+	background-repeat: repeat-x;
+	border-color: #ED1313;
+	border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ED1313', endColorstr='#ED1313', GradientType=0);
+	filter: progid:DXImageTransform.Microsoft.gradient(enabled=false);
+}
+.btn-rojo:hover,
+.btn-rojo:active,
+.btn-rojo.active,
+.btn-rojo.disabled,
+.btn-rojo[disabled] {
+	color: #910303;
+	background-color: #ED1313;
+	*background-color: #003bb3;
+}
 .clearfix {
   *zoom: 1;
 }
