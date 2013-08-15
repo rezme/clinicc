@@ -19,7 +19,7 @@
 <script type="text/javascript">
              $(document).ready(function() {
                 $("#peticion").click(function(event) {
-                    $("#capa").load('http://intermediafest.com/celular/dota2.php', function(response, status, xhr) {
+                    $("#capa").load('http://intermediafest.com/celular/consulta.php',{id: formulario.i.value, nombre: formulario.nom.value}, function(response, status, xhr) {
                           if (status == "error") {
                             var msg = "<strong>¡Error!</strong> Por favor verifica tu conexión a internet";
                             $("#capaerror").html('<div class="alert alert-error">' + msg + '</div>');
@@ -85,11 +85,14 @@
     	<div class="hero-unit">
             	<div class="centrar">
                 	<p style="font-size:medium;">Por favor introduce los siguientes <strong>datos:</strong></p>
+                     <form id="formulario" name="formulario">
                     <div class="control-group" style="margin-bottom: 0;">
+                   
                       <div class="controls">
                         <div class="input-prepend">
                           <span class="add-on"><i class="icon-user"></i></span>
-                    <input class="input-medium" data-role="none" type="text" placeholder="Nombre completo">
+                          
+                    <input class="input-medium" data-role="none" placeholder="Nombre completo" type="text" name="nom" value="">
                     		</div>
                     	</div>
                     </div>
@@ -98,10 +101,12 @@
                       <div class="controls">
                         <div class="input-prepend">
                           <span class="add-on"><i class="icon-info-sign"></i></span>
-                    <input class="input-medium" data-role="none" type="text" placeholder="ID">
+                    <input class="input-medium" placeholder="ID" data-role="none" type="text" name="i" value="" >
+                    	
                     		</div>
                     	</div>
                     </div>
+                    </form>
                     <a class="btn btn-block btn-success" href="#" id="peticion" style="margin-bottom:10px;">
               Enviar consulta
 					</a>
